@@ -11,4 +11,9 @@ internal class BorrowerTest {
         assertEquals("Gregor", borrower.name)
     }
 
+    @Test
+    fun collectionStartsEmpty() {
+        assertEquals(0, borrower.countCollection())
+    }
+
 }
