@@ -32,4 +32,24 @@ internal class LibraryTest {
         library.addBookToCollection(book6)
         assertEquals(5, library.countBooksInCollection())
     }
+
+    @Test
+    fun findBookByTitle_BookFound() {
+        library.addBookToCollection(book1)
+        library.addBookToCollection(book2)
+        library.addBookToCollection(book3)
+        library.addBookToCollection(book4)
+        val foundBook: Book? = library.findBookByTitle("A Game Of Thrones")
+        assertEquals(book2, foundBook)
+    }
+
+    @Test
+    fun findBookByTitle_BookNotFound() {
+        library.addBookToCollection(book1)
+        library.addBookToCollection(book2)
+        library.addBookToCollection(book3)
+        library.addBookToCollection(book4)
+        val foundBook: Book? = library.findBookByTitle("I, Robot")
+        assertNull(foundBook)
+    }
 }

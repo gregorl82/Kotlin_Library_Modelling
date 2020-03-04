@@ -16,4 +16,13 @@ class Library (capacity: Int) {
             stock.add(book)
         }
     }
+
+    fun findBookByTitle(title: String): Book? {
+        for (book in stock) {
+            if (book.title == title) {
+                return book
+            }
+        }
+        return null
+    }
 }
