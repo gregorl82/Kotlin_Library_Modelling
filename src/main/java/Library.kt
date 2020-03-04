@@ -25,4 +25,8 @@ class Library (capacity: Int) {
         }
         return null
     }
+
+    fun removeBookFromCollection(book: Book) {
+        stock.remove(book)
+    }
 }

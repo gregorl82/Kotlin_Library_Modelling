@@ -52,4 +52,14 @@ internal class LibraryTest {
         val foundBook: Book? = library.findBookByTitle("I, Robot")
         assertNull(foundBook)
     }
+
+    @Test
+    fun canRemoveBookFromCollection() {
+        library.addBookToCollection(book1)
+        library.addBookToCollection(book2)
+        library.addBookToCollection(book3)
+        library.removeBookFromCollection(book2)
+        assertEquals(2, library.countBooksInCollection())
+        assertFalse(library.stock.contains(book2))
+    }
 }
