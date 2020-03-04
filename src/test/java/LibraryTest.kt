@@ -3,8 +3,13 @@ import org.junit.jupiter.api.Test
 
 internal class LibraryTest {
 
-    val library = Library()
+    val library = Library(5)
     val book1 = Book("Pride and Prejudice", "Jane Austen", "Classic")
+    val book2 = Book("A Game Of Thrones", "George RR Martin", "Fantasy")
+    val book3 = Book("Noughts and Crosses", "Iain Banks", "Crime")
+    val book4 = Book("Wuthering Heights", "Emily Bronte", "Classic")
+    val book5 = Book("2001: A Space Odyssey", "Arthur C Clarke", "Sci-Fi")
+    val book6 = Book("Wolf Hall", "Hilary Mantel", "Historical Fiction")
 
     @Test
     fun libraryStartsEmpty() {
@@ -15,5 +20,16 @@ internal class LibraryTest {
     fun canAddBookToLibrary() {
         library.addBookToCollection(book1)
         assertEquals(1, library.countBooksInCollection())
+    }
+
+    @Test
+    fun cannotAddBookIfLibraryFull() {
+        library.addBookToCollection(book1)
+        library.addBookToCollection(book2)
+        library.addBookToCollection(book3)
+        library.addBookToCollection(book4)
+        library.addBookToCollection(book5)
+        library.addBookToCollection(book6)
+        assertEquals(5, library.countBooksInCollection())
     }
 }
