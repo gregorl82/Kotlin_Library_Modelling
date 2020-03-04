@@ -6,4 +6,8 @@ class Borrower (name: String) {
     fun countCollection(): Int {
         return collection.size
     }
+
+    fun addBookToCollection(book: Book) {
+        collection.add(book)
+    }
 }
