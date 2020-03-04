@@ -1,10 +1,10 @@
 class Library (capacity: Int) {
 
-    val collection: ArrayList<Book> = ArrayList()
+    val stock: ArrayList<Book> = ArrayList()
     val capacity: Int = capacity
 
     fun countBooksInCollection(): Int {
-        return collection.size
+        return stock.size
     }
 
     fun checkCapacity(): Boolean {
@@ -13,7 +13,7 @@ class Library (capacity: Int) {
 
     fun addBookToCollection(book: Book) {
         if (checkCapacity()) {
-            collection.add(book)
+            stock.add(book)
         }
     }
 }
